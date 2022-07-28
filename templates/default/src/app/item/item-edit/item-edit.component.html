@@ -1,0 +1,11 @@
+<nz-page-header>
+  <nz-breadcrumb
+    [nzAutoGenerate]="true"
+    nz-page-header-breadcrumb
+  ></nz-breadcrumb>
+</nz-page-header>
+<nz-divider></nz-divider>
+<app-item-edit-form
+  [itemSelected]="(itemSelected$ | async)!"
+  (actionEvent)="update($event)"
+></app-item-edit-form>

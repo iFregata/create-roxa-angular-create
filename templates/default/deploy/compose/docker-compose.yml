@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  webapi:
+    ports:
+      - "8080:8080"
+    image: ${REPO_BASE_URL}/${ARTIFACT_NAME}:${TAG}

@@ -1,0 +1,18 @@
+<nz-page-header>
+  <nz-breadcrumb
+    [nzAutoGenerate]="true"
+    nz-page-header-breadcrumb
+  ></nz-breadcrumb>
+  <nz-page-header-extra>
+    <a [routerLink]="['edit']" nz-tooltip nzTooltipTitle="Edit">
+      <i nz-icon nzType="edit" nzTheme="outline"></i>
+    </a> | 
+    <a [routerLink]="['dup']" nz-tooltip nzTooltipTitle="Duplicate">
+      <i nz-icon nzType="copy" nzTheme="outline"></i>
+    </a>
+  </nz-page-header-extra>
+</nz-page-header>
+<nz-divider></nz-divider>
+<app-item-desc-fields
+  [item]="(item$ | async)!"
+></app-item-desc-fields>

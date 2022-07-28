@@ -1,0 +1,8 @@
+nz-content {
+  display: flex;
+  flex-direction: column;
+}
+.inner-content {
+  background-color: #fff;
+  flex: 1;
+}

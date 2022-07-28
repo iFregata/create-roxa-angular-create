@@ -1,0 +1,44 @@
+<div nz-row>
+  <div nz-col nzSpan="6" nzOffset="9">
+    <form
+      nz-form
+      class="sign-in-form"
+      [formGroup]="signInForm"
+      (ngSubmit)="signIn()"
+      ngxsForm="auth.signInForm"
+    >
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Enter the ID of user">
+          <nz-input-group nzPrefixIcon="user">
+            <input
+              type="text"
+              nz-input
+              formControlName="username"
+              placeholder="User ID"
+            />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Enter the password of user">
+          <nz-input-group nzPrefixIcon="lock">
+            <input
+              type="password"
+              nz-input
+              formControlName="password"
+              placeholder="Password"
+            />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+      <button
+        nz-button
+        class="sign-in-form-button"
+        nzType="primary"
+        [disabled]="!signInForm.valid"
+      >
+      Sign In
+      </button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: dev
+  name: dev-deploy-{{name}}-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dev-{{name}}-frontend
+  template:
+    metadata:
+      name: dev-{{name}}-frontend
+      labels:
+        app: dev-{{name}}-frontend
+        revision: '1'
+    spec:
+      containers:
+      - name: dev-{{name}}-pod-frontend
+        image: ${REPO_BASE_URL}/${ARTIFACT_NAME}:${TAG}
+        imagePullPolicy: Always
+        resources:
+          requests:
+            cpu: "250m"
+            memory: "128Mi"
+        ports:
+          - containerPort: 8181
+            protocol: TCP

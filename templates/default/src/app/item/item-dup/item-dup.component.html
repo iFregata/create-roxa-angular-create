@@ -1,0 +1,11 @@
+<nz-page-header>
+  <nz-breadcrumb
+    [nzAutoGenerate]="true"
+    nz-page-header-breadcrumb
+  ></nz-breadcrumb>
+</nz-page-header>
+<nz-divider></nz-divider>
+<app-item-dup-form
+  [itemSelected]="(itemSelected$ | async)!"
+  (actionEvent)="duplicate($event)"
+></app-item-dup-form>

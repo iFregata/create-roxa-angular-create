@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ing-webconsole-dev-foo-com
+  namespace: dev
+spec:
+  rules:
+  - http:
+      paths:
+      - backend:
+          service:
+            name: dev-svc-{{name}}-frontend
+            port:
+              number: 8080
+        path: /{{name}}
+        pathType: Prefix

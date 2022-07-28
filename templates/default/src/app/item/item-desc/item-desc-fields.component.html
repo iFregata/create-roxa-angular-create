@@ -1,0 +1,22 @@
+{{{{raw-helper}}}}
+<nz-descriptions nzBordered>
+  <nz-descriptions-item nzTitle="Description" [nzSpan]="3">{{
+    item.description
+  }}</nz-descriptions-item>
+  <nz-descriptions-item nzTitle="ID">{{
+    item.id
+  }}</nz-descriptions-item>
+  <nz-descriptions-item nzTitle="SN">{{
+    item.sn
+  }}</nz-descriptions-item>
+  <nz-descriptions-item nzTitle="Name">{{
+    item.name
+  }}</nz-descriptions-item>
+  <nz-descriptions-item nzTitle="Price">{{
+    item.price
+  }}</nz-descriptions-item>
+  <nz-descriptions-item nzTitle="Date Created" [nzSpan]="2">{{
+    item.epoch_millis | date: 'yyyy-MM-dd HH:mm:ss'
+  }}</nz-descriptions-item>
+</nz-descriptions>
+{{{{/raw-helper}}}}

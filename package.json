@@ -1,0 +1,32 @@
+{
+  "name": "create-roxa-angular-create",
+  "description": "The scaffold of angular web application",
+  "version": "0.0.2",
+  "keywords": ["angular","create-app","ngxs","scaffold","ng-zorro"],
+  "author": "Steven Chen <steven@shellpays.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iFregata/create-roxa-angular-create.git"
+  },
+  "scripts": {
+    "build": "tsup src/cli.ts --minify",
+    "clean": "shx rm -rf lib",
+    "dev": "tsup src/cli.ts --watch",
+    "prepublishOnly": "npm run clean && npm run build"
+  },
+  "bin": "dist/cli.js",
+  "files": [
+    "dist",
+    "templates"
+  ],
+  "dependencies": {
+    "create-create-app": "^7.3.0",
+    "handlebars": "^4.7.7"
+  },
+  "devDependencies": {
+    "shx": "^0.3.4",
+    "tsup": "^5.12.1",
+    "typescript": "^4.6.3"
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,34 @@
+<form nz-form [formGroup]="itemForm" (ngSubmit)="onSubmit()">
+  <nz-form-item>
+    <nz-form-label [nzSm]="6" [nzXs]="24">Description</nz-form-label>
+    <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="it's required">
+      <input nz-input type="text" formControlName="description" />
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSm]="6" [nzXs]="24">SN</nz-form-label>
+    <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="it's required">
+      <input nz-input type="text" formControlName="sn" />
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSm]="6" [nzXs]="24">Name</nz-form-label>
+    <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="it's required">
+      <input nz-input type="text" formControlName="name" />
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSm]="6" [nzXs]="24">Price</nz-form-label>
+    <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="it's required">
+      <input nz-input type="text" formControlName="price" />
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-control [nzSpan]="4" [nzOffset]="6">
+      <button nz-button nzType="primary" [disabled]="!itemForm.valid">
+        Register
+      </button>
+    </nz-form-control>
+  </nz-form-item>
+</form>

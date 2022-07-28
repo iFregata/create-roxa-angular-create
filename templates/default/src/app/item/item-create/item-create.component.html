@@ -1,0 +1,10 @@
+<nz-page-header>
+  <nz-breadcrumb
+    [nzAutoGenerate]="true"
+    nz-page-header-breadcrumb
+  ></nz-breadcrumb>
+</nz-page-header>
+<nz-divider></nz-divider>
+<app-item-create-form
+  (actionEvent)="create($event)"
+></app-item-create-form>

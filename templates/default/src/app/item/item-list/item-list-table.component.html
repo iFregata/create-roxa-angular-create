@@ -1,0 +1,38 @@
+<nz-table #dataTable [nzData]="items">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Date Created</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of dataTable.data">
+      {{{{raw-helper}}}}
+      <td>{{ item.id }}</td>
+      <td>{{ item.name }}</td>
+      <td>{{ item.epoch_millis | date: 'yyyy-MM-dd HH:mm:ss' }}</td>
+      {{{{/raw-helper}}}}
+      <td>
+        <a
+          nz-tooltip
+          nzTooltipTitle="details"
+          [routerLink]="['desc', item.id]"
+        >
+          <i nz-icon nzType="eye" nzTheme="outline"></i>
+        </a>
+        <nz-divider nzType="vertical"></nz-divider>
+        <a
+          nz-tooltip
+          nzTooltipTitle="Remove"
+          nz-popconfirm
+          nzPopconfirmTitle="Confirm to remove?"
+          (nzOnConfirm)="remove(item)"
+        >
+          <i nz-icon nzType="delete-row" nzTheme="outline"></i>
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>

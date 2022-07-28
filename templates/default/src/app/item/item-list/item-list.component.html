@@ -1,0 +1,14 @@
+<nz-page-header>
+  <nz-breadcrumb
+    [nzAutoGenerate]="true"
+    nz-page-header-breadcrumb
+  ></nz-breadcrumb>
+  <nz-page-header-extra>
+    <a [routerLink]="['create']">New</a>
+  </nz-page-header-extra>
+</nz-page-header>
+<nz-divider></nz-divider>
+<app-item-list-table
+  [items]="(items$ | async)!"
+  (actionEvent)="remove($event)"
+></app-item-list-table>
